@@ -13,15 +13,15 @@
 
 __Featuers of Rieder__
 
-- [] Create account 
+- [ ] Create account 
 
-- [] view list of available bikes
+- [ ] view list of available bikes
 
-- [] rent bikes 
+- [ ] rent bikes 
 
-- [] add own bikes so others can rent it 
+- [ ] add own bikes so others can rent it 
 
-- [] add rating (scoring)
+- [ ] add rating (scoring)
 
-- [] enable those who rent your bike rate your bike 
+- [ ] enable those who rent your bike rate your bike 
 
