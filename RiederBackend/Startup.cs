@@ -26,6 +26,9 @@ namespace RiederBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //using in memory db for test
+            //TODO: remember to change this to sqlserver in production
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
