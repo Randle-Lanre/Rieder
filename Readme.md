@@ -28,4 +28,4 @@ __Featuers of Rieder__
 
 ## System Design for renting a bike
 
-! [](reider%20bike%20selction%20activity%20diagramIMG.png)
+![](diagrams/reider%20bike%20selction%20activity%20diagramIMG.png)
