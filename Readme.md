@@ -26,6 +26,6 @@ __Featuers of Rieder__
 - [ ] enable those who rent your bike rate your bike 
 
 
-##System Design for renting a bike
+## System Design for renting a bike
 
-![](reider%20bike%20selction%20activity%20diagramIMG.png)
+! [](reider%20bike%20selction%20activity%20diagramIMG.png)
