@@ -6,7 +6,8 @@ using RiederBackend.Entities;
 
 namespace RiederBackend.Helpers
 {
-    public class ExtensionMethods
+    //class must be static 
+    public static class ExtensionMethods
     {
         public static IEnumerable<User> WithoutPasswords(this IEnumerable<User> users)
         {
