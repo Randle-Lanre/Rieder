@@ -6,7 +6,7 @@ using RiederBackend.Entities;
 
 namespace RiederBackend.ServiceInterface
 {
-    interface IUserServices
+    public  interface IUserServices
     {
         User Authenticate(string username, string password);
         IEnumerable<User> GetAll();
