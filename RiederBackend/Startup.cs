@@ -41,7 +41,7 @@ namespace RiederBackend
             //TODO: remember to change this to sqlserver in production
             //services.AddDbContext<ReiderDbcontext>(db => db.UseInMemoryDatabase("bicycles"));
             services.AddDbContext<ApplicationDbContext>(db =>
-                db.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                db.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
 
 
             //configuring strongly typed settings objects
