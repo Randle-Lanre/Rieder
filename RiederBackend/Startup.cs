@@ -40,7 +40,7 @@ namespace RiederBackend
             //using in memory db for test
             //TODO: remember to change this to sqlserver in production
             //services.AddDbContext<ReiderDbcontext>(db => db.UseInMemoryDatabase("bicycles"));
-            services.AddDbContext<ReiderDbcontext>(db =>
+            services.AddDbContext<ApplicationDbContext>(db =>
                 db.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
