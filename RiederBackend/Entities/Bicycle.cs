@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,9 +21,11 @@ namespace RiederBackend.Entities
         public string Type { get; set; }
 
         //this would indicate the bicycle capacity 
+        [Column(TypeName = "decimal(3,2)")]
         public decimal Capacity { get; set; }
 
         //this would  indicate the maximum speed of the bike
+        [StringLength(3)]
         public int Speed { get; set; }
     }
 }

@@ -6,6 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200504143121_characterConstrainedMdf.cs" />
+    <Compile Remove="Migrations\20200504143121_characterConstrainedMdf.Designer.cs" />
+    <Compile Remove="Migrations\20200504143428_characterConstrainedMdf.cs" />
+    <Compile Remove="Migrations\20200504143428_characterConstrainedMdf.Designer.cs" />
+    <Compile Remove="Migrations\20200504143718_characterConstrainedMdf.cs" />
+    <Compile Remove="Migrations\20200504143718_characterConstrainedMdf.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="automapper" Version="9.0.0" />
     <PackageReference Include="JWT" Version="6.1.4" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.3" />
