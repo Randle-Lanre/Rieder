@@ -10,10 +10,10 @@ namespace RiederBackend.Entities
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(255)]
+        [StringLength(40)]
         public string LastName { get; set; }
         [Required]
-        [StringLength(255)]
+        [StringLength(40)]
         public string FirstName { get; set; }
         
         public int Age { get; set; }
