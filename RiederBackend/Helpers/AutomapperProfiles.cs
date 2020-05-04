@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using RiederBackend.Dtos;
+using RiederBackend.Entities;
 
 namespace RiederBackend.Helpers
 {
@@ -11,8 +13,12 @@ namespace RiederBackend.Helpers
         public AutomapperProfiles()
         {
 
-            //TODO: configure mappings
-            
+            CreateMap<Bicycle, BicycleDto>().ReverseMap();
+
+            CreateMap<BicycleCreationDto, Bicycle>();
+
+
+
         }
     }
 }

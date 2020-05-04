@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using RiederBackend.Dtos;
 using RiederBackend.Model;
 
 namespace RiederBackend.Controllers
@@ -27,7 +28,21 @@ namespace RiederBackend.Controllers
             _logger = logger;
         }
 
-        public 
+        [HttpGet("{id: int}")]
+        public async Task<ActionResult<BicycleDto>> Get (int id)
+        {
+
+            var bicycle = await _context.Bicycles.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (bicycle == null)
+                return NotFound();
+
+            var bicycleDto = _mapper.Map<BicycleDto>(bicycle);
+
+            return bicycleDto;
+
+
+        }
        
     }
 }
