@@ -11,7 +11,7 @@ namespace RiederBackend
     public class ApplicationDbContext :DbContext
     {
 
-        public ApplicationDbContext([NotNull] DbContextOptions options): base(options)
+        public ApplicationDbContext([NotNullAttribute] DbContextOptions options): base(options)
         {
             
         }
