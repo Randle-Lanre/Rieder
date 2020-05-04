@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace RiederBackend.Dtos
 {
-    public class SellerDto
+    public class SellerCreationDto
     {
-        public int Id { get; set; }
         [Required]
         [StringLength(40)]
 
@@ -16,6 +15,5 @@ namespace RiederBackend.Dtos
         [Required]
         [StringLength(40)]
         public string FirstName { get; set; }
-
     }
 }

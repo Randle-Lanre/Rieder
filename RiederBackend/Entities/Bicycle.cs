@@ -11,12 +11,12 @@ namespace RiederBackend.Entities
         public int Id { get; set; }
 
         [Required]
-        [StringLength(255)]
+        [StringLength(40)]
         public string Brand { get; set; }
 
         //the type would indicate if the bike is a mountain bike or a regular bike
         [Required]
-        [StringLength(255)]
+        [StringLength(40)]
         public string Type { get; set; }
 
         //this would indicate the bicycle capacity 
