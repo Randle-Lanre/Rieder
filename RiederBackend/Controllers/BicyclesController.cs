@@ -9,12 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RiederBackend.Dtos;
+using RiederBackend.Entities;
 using RiederBackend.Model;
 
 namespace RiederBackend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/bicycles")]
     public class BicyclesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -28,7 +29,7 @@ namespace RiederBackend.Controllers
             _logger = logger;
         }
 
-        [HttpGet("{id: int}")]
+        [HttpGet("{id: int}", Name = "GetBicycles")]
         public async Task<ActionResult<BicycleDto>> Get (int id)
         {
 
@@ -43,6 +44,36 @@ namespace RiederBackend.Controllers
 
 
         }
+
+        [HttpPost]
+        public async Task<ActionResult> Post([FromBody] BicycleCreationDto bicycleCreation)
+        {
+            var bicycle = _mapper.Map<Bicycle>(bicycleCreation);
+            _context.Add(bicycle);
+            await _context.SaveChangesAsync();
+
+            var bicycleDto = _mapper.Map<BicycleDto>(bicycle);
+
+            return new CreatedAtRouteResult("getBicycles", new {bicycleDto}, bicycleDto);
+
+
+        }
+
+        [HttpDelete("id: int")]
+        public async Task<ActionResult<BicycleDto>> Delete(int id)
+        {
+            var exists = await _context.Bicycles.AnyAsync(x => x.Id == id);
+            if (! exists)
+                return NotFound();
+
+            _context.Remove(new Bicycle() {Id = id});
+           await _context.SaveChangesAsync();
+           return NoContent();
+
+        }
+
+
+
 
 
        
