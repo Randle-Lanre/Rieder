@@ -17,6 +17,9 @@ namespace RiederBackend.Helpers
 
             CreateMap<BicycleCreationDto, Bicycle>();
 
+            CreateMap<Seller, SellerDto>().ReverseMap();
+            CreateMap<SellerCreationDto, Seller>();
+
 
 
         }
