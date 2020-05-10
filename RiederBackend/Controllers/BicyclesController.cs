@@ -72,6 +72,19 @@ namespace RiederBackend.Controllers
 
         }
 
+        [HttpPut]
+        public async Task<ActionResult> Put(int id, [FromBody]BicycleCreationDto bicycleCreationDto)
+        {
+            var bicycle = _mapper.Map<BicycleDto>(bicycleCreationDto);
+            bicycle.Id = id;
+            _context.Entry(bicycle).State = EntityState.Modified;
+
+            await _context.SaveChangesAsync();
+            return NoContent();
+
+
+
+        }
 
 
 
