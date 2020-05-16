@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RiederBackend.Dtos;
 
@@ -14,20 +15,37 @@ namespace RiederBackend.Controllers
     public class SellersController : ControllerBase
     {
         private readonly IMapper _mapper;
-        private readonly ApplicationDbContext _dbContext;
+        private readonly ApplicationDbContext _context;
         private readonly ILogger<SellersController> _logger;
 
-        public SellersController( IMapper mapper, ApplicationDbContext dbContext, ILogger<SellersController> logger)
+        public SellersController( IMapper mapper, ApplicationDbContext context, ILogger<SellersController> logger)
         {
             _mapper = mapper;
-            _dbContext = dbContext;
+            _context = context;
             _logger = logger;
         }
 
-        public Task<ActionResult<SellerDto>> Get()
+
+        [HttpGet("id")]
+        public async Task<ActionResult<SellerDto>> Get(int id)
         {
+            var seller =  await _context.Sellers.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (seller == null)
+            {
+                _logger.Log(LogLevel.Warning, "could not find seller");
+                return NotFound();
+            }
+
+            var sellerDto = _mapper.Map<SellerDto>(seller);
+
+            return sellerDto;
+
 
         }
+
+
+
 
 
     }
