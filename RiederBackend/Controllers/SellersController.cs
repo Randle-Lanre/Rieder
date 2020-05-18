@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RiederBackend.Dtos;
+using RiederBackend.Entities;
 
 namespace RiederBackend.Controllers
 {
@@ -26,7 +27,7 @@ namespace RiederBackend.Controllers
         }
 
 
-        [HttpGet("id")]
+        [HttpGet("{id: int}", Name = "getSellers")]
         public async Task<ActionResult<SellerDto>> Get(int id)
         {
             var seller =  await _context.Sellers.FirstOrDefaultAsync(x => x.Id == id);
@@ -44,9 +45,23 @@ namespace RiederBackend.Controllers
 
         }
 
+        [HttpPost]
+
+        public async Task<ActionResult> Post([FromForm] SellerCreationDto sellerCreation )
+        {
+            var seller = _mapper.Map<Seller>(sellerCreation);
+            _context.Add(seller);
+            await _context.SaveChangesAsync();
+
+            var sellerDto = _mapper.Map<SellerDto>(seller);
+
+            return new CreatedAtRouteResult("getSellers", new {sellerDto}, sellerDto );
 
 
 
+        }
 
+        
+        
     }
 }

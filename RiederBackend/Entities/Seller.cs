@@ -19,6 +19,12 @@ namespace RiederBackend.Entities
         [StringLength(40)]
         public string FirstName { get; set; }
 
+        public ICollection<Bicycle> Bicycles { get; set; }
+
+
+
+
+
 
     }
 }

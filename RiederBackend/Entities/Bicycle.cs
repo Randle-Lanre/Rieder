@@ -27,5 +27,17 @@ namespace RiederBackend.Entities
         //this would  indicate the maximum speed of the bike
         [StringLength(3)]
         public int Speed { get; set; }
+
+
+        public Seller Seller { get; set; }
+
+
+        public ICollection<Order> Orders { get; set; }
+
+
+
+        
+
+       
     }
 }

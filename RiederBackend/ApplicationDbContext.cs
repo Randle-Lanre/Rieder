@@ -22,6 +22,8 @@ namespace RiederBackend
 
         public DbSet<Seller> Sellers { get; set; }
 
+        public DbSet<Order> Orders { get; set; }
+
 
 
     }

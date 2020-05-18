@@ -16,9 +16,29 @@ namespace RiederBackend.Entities
         [StringLength(40)]
         public string FirstName { get; set; }
         
+        [Required]
+        [StringLength(3)]
         public int Age { get; set; }
 
-        public DateTime DateOfRegistration { get; set; }
+        [Required]
+        [DataType(DataType.DateTime)]
+        public DateTime RegistrationDate { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string Address { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        public int Phone { get; set; }
+
+        public ICollection<Order> Orders { get; set; }
+
+
 
 
     }
