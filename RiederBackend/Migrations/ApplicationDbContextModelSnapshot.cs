@@ -34,6 +34,9 @@ namespace RiederBackend.Migrations
                     b.Property<decimal>("Capacity")
                         .HasColumnType("decimal(3,2)");
 
+                    b.Property<int?>("SellerId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Speed")
                         .HasColumnType("int")
                         .HasMaxLength(3);
@@ -45,6 +48,8 @@ namespace RiederBackend.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("SellerId");
+
                     b.ToTable("Bicycles");
                 });
 
@@ -55,11 +60,18 @@ namespace RiederBackend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
-                    b.Property<DateTime>("DateOfRegistration")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("Age")
+                        .HasColumnType("int")
+                        .HasMaxLength(3);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -71,9 +83,48 @@ namespace RiederBackend.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
 
+                    b.Property<int>("Phone")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("RegistrationDate")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("RiederBackend.Entities.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
+
+                    b.Property<int?>("BicycleId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ReturnDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BicycleId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("RiederBackend.Entities.Seller", b =>
@@ -96,6 +147,24 @@ namespace RiederBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sellers");
+                });
+
+            modelBuilder.Entity("RiederBackend.Entities.Bicycle", b =>
+                {
+                    b.HasOne("RiederBackend.Entities.Seller", "Seller")
+                        .WithMany("Bicycles")
+                        .HasForeignKey("SellerId");
+                });
+
+            modelBuilder.Entity("RiederBackend.Entities.Order", b =>
+                {
+                    b.HasOne("RiederBackend.Entities.Bicycle", "Bicycle")
+                        .WithMany("Orders")
+                        .HasForeignKey("BicycleId");
+
+                    b.HasOne("RiederBackend.Entities.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId");
                 });
 #pragma warning restore 612, 618
         }
