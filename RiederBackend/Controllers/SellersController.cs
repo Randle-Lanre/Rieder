@@ -12,7 +12,7 @@ using RiederBackend.Entities;
 namespace RiederBackend.Controllers
 {
     [ApiController]
-    [Route("api/sellers")]
+    [Route("api/[controller]")]
     public class SellersController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -27,7 +27,8 @@ namespace RiederBackend.Controllers
         }
 
 
-        [HttpGet("{id: int}", Name = "getSellers")]
+        [HttpGet("{id:int}", Name = "getSellers")]
+       // [HttpGet]
         public async Task<ActionResult<SellerDto>> Get(int id)
         {
             var seller =  await _context.Sellers.FirstOrDefaultAsync(x => x.Id == id);
@@ -46,8 +47,7 @@ namespace RiederBackend.Controllers
         }
 
         [HttpPost]
-
-        public async Task<ActionResult> Post([FromForm] SellerCreationDto sellerCreation )
+        public async Task<ActionResult> Post([FromBody] SellerCreationDto sellerCreation )
         {
             var seller = _mapper.Map<Seller>(sellerCreation);
             _context.Add(seller);

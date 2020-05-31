@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RiederBackend.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +14,35 @@ namespace RiederBackend.Controllers
     public class CustomersController : ControllerBase
     {
         private readonly IMapper _mapper;
-        private readonly ApplicationDbContext _dbContext;
+        private readonly ApplicationDbContext _context;
 
-        public CustomersController(IMapper mapper, ApplicationDbContext dbContext)
+        public CustomersController(IMapper mapper, ApplicationDbContext context)
         {
             _mapper = mapper;
-            _dbContext = dbContext;
+            _context = context;
 
 
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<CustomerDto>> Get(int id)
+        {
+            var customer = await _context.Customers.FirstOrDefaultAsync(x => x.Id == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            var customerDto = _mapper.Map<CustomerDto>(customer);
+
+            return customerDto;
+
+
+
+        }
+
+
+
 
 
 

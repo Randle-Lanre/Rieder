@@ -29,7 +29,7 @@ namespace RiederBackend.Controllers
             _logger = logger;
         }
 
-        [HttpGet("{id: int}", Name = "GetBicycles")]
+        [HttpGet("{id:int}", Name = "GetBicycles")]
         public async Task<ActionResult<BicycleDto>> Get (int id)
         {
 
@@ -59,7 +59,7 @@ namespace RiederBackend.Controllers
 
         }
 
-        [HttpDelete("id: int")]
+        [HttpDelete("id:int")]
         public async Task<ActionResult<BicycleDto>> Delete(int id)
         {
             var exists = await _context.Bicycles.AnyAsync(x => x.Id == id);

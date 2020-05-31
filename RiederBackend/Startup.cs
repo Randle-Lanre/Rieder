@@ -18,6 +18,7 @@ using RiederBackend.Helpers;
 using RiederBackend.Model;
 using RiederBackend.ServiceInterface;
 using RiederBackend.Services;
+using AutoMapper;
 
 namespace RiederBackend
 {
@@ -33,42 +34,22 @@ namespace RiederBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            
             //-------------------
-            services.AddCors();
+            //services.AddCors();
             //--------------------
             
             services.AddDbContext<ApplicationDbContext>(opt=>opt.UseSqlServer
                 (Configuration.GetConnectionString("DefaultConnection")));
-            
+            //add automapper
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddControllers();
 
 
-            //configuring strongly typed settings objects
-            var appSettingsSection = Configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettingsSection);
 
-            //configuration jwt authentication
-            var appSettings = appSettingsSection.Get<AppSettings>();
-            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-            services.AddAuthentication(x =>
-                {
-                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                })
-                .AddJwtBearer(x =>
-                {
-                    x.RequireHttpsMetadata = false;
-                    x.SaveToken = true;
-                    x.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(key),
-                        ValidateIssuer = false,
-                        ValidateAudience = false
-                    };
-                });
             //configure DI for application services 
-            services.AddScoped<IUserServices, UserServices>();
+            //  services.AddScoped<IUserServices, UserServices>();
 
         }
 
@@ -80,13 +61,13 @@ namespace RiederBackend
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
 
             //global cors policy
-            app.UseCors(x =>
-                x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod()
+            //app.UseCors(x =>
+            //    x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod()
 
-            );
+            //);
             //--------end
 
             app.UseRouting();
