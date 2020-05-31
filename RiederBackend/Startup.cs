@@ -40,6 +40,7 @@ namespace RiederBackend
             
             services.AddDbContext<ApplicationDbContext>(opt=>opt.UseSqlServer
                 (Configuration.GetConnectionString("DefaultConnection")));
+            
 
 
             //configuring strongly typed settings objects

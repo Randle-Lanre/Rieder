@@ -61,6 +61,24 @@ namespace RiederBackend.Controllers
 
         }
 
+        [HttpDelete]
+        public async Task<ActionResult<SellerDto>> Delete(int id)
+        {
+            var sellerExists = await _context.Sellers.AnyAsync(x => x.Id == id);
+
+            if (!sellerExists)
+                return NotFound();
+
+            _context.Remove(new Seller() { Id = id });
+            await _context.SaveChangesAsync();
+            return NoContent();
+
+
+
+
+
+        }
+
         
         
     }
