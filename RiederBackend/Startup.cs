@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+//using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
+//using Microsoft.IdentityModel.Tokens;
 using RiederBackend.Helpers;
 using RiederBackend.Model;
 using RiederBackend.ServiceInterface;
@@ -34,19 +34,14 @@ namespace RiederBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddControllers();
             //-------------------
             //services.AddCors();
             //--------------------
-            
             services.AddDbContext<ApplicationDbContext>(opt=>opt.UseSqlServer
                 (Configuration.GetConnectionString("DefaultConnection")));
             //add automapper
             services.AddAutoMapper(typeof(Startup));
-
-            services.AddControllers();
-
-
 
             //configure DI for application services 
             //  services.AddScoped<IUserServices, UserServices>();
@@ -61,19 +56,12 @@ namespace RiederBackend
                 app.UseDeveloperExceptionPage();
             }
 
-           // app.UseHttpsRedirection();
-
-            //global cors policy
-            //app.UseCors(x =>
-            //    x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod()
-
-            //);
-            //--------end
+            app.UseHttpsRedirection();
 
             app.UseRouting();
             //add the authentication to the middleware
 
-            app.UseAuthentication();
+          //  app.UseAuthentication();
             //--------------------end
 
             app.UseAuthorization();

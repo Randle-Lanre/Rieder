@@ -29,7 +29,7 @@ namespace RiederBackend.Controllers
             _logger = logger;
         }
 
-        [HttpGet("{id:int}", Name = "GetBicycles")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<BicycleDto>> Get (int id)
         {
 

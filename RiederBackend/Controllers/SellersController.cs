@@ -11,10 +11,11 @@ using RiederBackend.Entities;
 
 namespace RiederBackend.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class SellersController : ControllerBase
     {
+       
         private readonly IMapper _mapper;
         private readonly ApplicationDbContext _context;
         private readonly ILogger<SellersController> _logger;
@@ -27,7 +28,7 @@ namespace RiederBackend.Controllers
         }
 
 
-        [HttpGet("{id:int}", Name = "getSellers")]
+        [HttpGet("{id:int}")]
        // [HttpGet]
         public async Task<ActionResult<SellerDto>> Get(int id)
         {
@@ -55,13 +56,14 @@ namespace RiederBackend.Controllers
 
             var sellerDto = _mapper.Map<SellerDto>(seller);
 
-            return new CreatedAtRouteResult("getSellers", new {sellerDto}, sellerDto );
+            //return new CreatedAtRouteResult("sellers", new {sellerDto}, sellerDto );
+            return new CreatedAtRouteResult(new { sellerDto }, sellerDto);
 
 
 
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<SellerDto>> Delete(int id)
         {
             var sellerExists = await _context.Sellers.AnyAsync(x => x.Id == id);
