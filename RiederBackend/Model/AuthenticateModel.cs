@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiederBackend.Model
 {
+    // re-work the auth settings 
     public class AuthenticateModel
     {
         [Required]
