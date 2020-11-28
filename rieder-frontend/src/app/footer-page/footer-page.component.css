@@ -1,0 +1,26 @@
+.footer-prop {
+    position: absolute;
+min-width: 100%;
+height: 30%;
+left: 0px;
+top: 679px;
+
+background: #ADB9FF;
+}
+
+.ft{
+    color:#EBEEFF;
+}
+
+/* 
+.footer-icons{
+    Social Icons
+
+
+ position: fixed;
+width: auto;
+height: 29px;
+left: 538px;
+top: 753px; 
+
+} */
