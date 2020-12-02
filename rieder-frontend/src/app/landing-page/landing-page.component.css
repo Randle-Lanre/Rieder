@@ -1,7 +1,68 @@
 .hicon{
     position: absolute;
-width: 680px;
-height: 486px;
-left: 700px;
-top: 153px;
+width: 500px;
+height: 386px;
+left: 850px;
+top: 123px;
+}
+
+
+.landing-message{
+    /* Rieder enables you rent a bike and have it delivered to you..... */
+
+
+position: absolute;
+width: 451px;
+height: 112px;
+left: 211px;
+top: 273px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 30px;
+
+color: #000000;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.landing-message-sub{
+    /* you could even rent yours out */
+
+
+position: absolute;
+width: 444px;
+height: 49px;
+left: 215px;
+top: 365px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 29px;
+
+color: #000000;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.get-started{
+    
+/* Group 1 */
+border-color:#ADB9FF ;
+color: #ADB9FF;
+text-decoration: none;
+background-color: white;
+
+position: absolute;
+width: 300px;
+height: 55px;
+left: 215px;
+top: 493px;
+border-radius: 12px;
+filter: drop-shadow(0px 4px 4px rgba(33, 25, 77, 0.25));
 }
