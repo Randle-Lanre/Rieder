@@ -1,0 +1,17 @@
+.login-comp{
+    /* Rectangle 16 */
+
+
+position: absolute;
+width: 508px;
+height: 634px;
+left: 455px;
+top: 195px;
+
+background: #FFFFFF;
+border: 5px solid #FFFFFF;
+box-sizing: border-box;
+box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+border-radius: 49px;
+}
+

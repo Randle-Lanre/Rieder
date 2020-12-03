@@ -2,7 +2,8 @@
     position: absolute;
 width: 500px;
 height: 386px;
-left: 850px;
+/* left: 850px; */
+left: 60%;
 top: 123px;
 }
 
@@ -15,7 +16,7 @@ position: absolute;
 width: 451px;
 height: 112px;
 left: 211px;
-top: 273px;
+top: 20%;
 
 font-family: Montserrat;
 font-style: normal;
@@ -37,7 +38,7 @@ position: absolute;
 width: 444px;
 height: 49px;
 left: 215px;
-top: 365px;
+top: 35%;
 
 font-family: Montserrat;
 font-style: normal;
@@ -65,4 +66,9 @@ left: 215px;
 top: 493px;
 border-radius: 12px;
 filter: drop-shadow(0px 4px 4px rgba(33, 25, 77, 0.25));
+}
+
+.landing-display{
+    display: cover !important;
+    height: 100vh !important;
 }
