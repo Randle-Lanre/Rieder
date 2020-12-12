@@ -1,22 +1,28 @@
 <div class="container">
-    <div class="card login-comp">
+    <div class="card login-comp ">
 
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="container " id="form-group-position">
+            <h3>Login</h3>
             <div class="form-group ">
-                <label >username:</label>
+                <!-- <label >username:</label> -->
                 <br>
-                <input type="text" formControlName="username" placeholder="enter username" required>
+                <input type="text" formControlName="username" placeholder=" Username" required>
             </div>
 
             <div class="form-group">
-                <label >password:</label>
+                <!-- <label >password:</label> -->
                 <br>
-                <input type="password" formControlName="password"  required>
+                <input type="password" formControlName="password" placeholder=" Password" required>
             </div>
     
-    
+            <button class="btn btn-primary btn-lg" type="submit" [disabled]="!loginForm.valid">Login</button>
+
+           
     
         </form>
+        <a href="" id="form-group-position">Forgot password ?</a>
     </div>
     
 </div>
+
+<!-- <h2>Testing to see this works </h2> -->

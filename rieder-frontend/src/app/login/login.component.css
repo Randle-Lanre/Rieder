@@ -5,8 +5,8 @@
 position: absolute;
 width: 508px;
 height: 634px;
-left: 455px;
-top: 195px;
+left: 35%;
+top: 20%;
 
 background: #FFFFFF;
 border: 5px solid #FFFFFF;
@@ -15,3 +15,10 @@ box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
 border-radius: 49px;
 }
 
+#form-group-position{
+    /* left: 25%; */
+    top: 15%;
+    position: relative;
+    text-align: center;
+    
+}
