@@ -1,0 +1,62 @@
+.contact-page-left{
+    /* Rectangle 7 */
+
+
+position: absolute;
+width: 530px;
+height: 100vh;
+left: 5%;
+top: 10%;
+
+background: #ADB9FF;
+}
+
+
+.contact-page-left-text{
+    /* Speak with us */
+
+
+position: absolute;
+width: 360px;
+height: 86px;
+left: 129px;
+top: 355px;
+
+font-family: Lobster;
+font-style: normal;
+font-weight: normal;
+font-size: 45px;
+line-height: 56px;
+
+color: #EBEEFF;
+}
+
+
+
+.contact-page-left-design-line{
+    /* Line 1 */
+
+
+position: absolute;
+width: 533px;
+height: 0px;
+left: 43px;
+top: 179px;
+
+border: 1px solid #FFFFFF;
+transform: rotate(90.23deg);
+}
+
+.contact-page-left-design-line-dot{
+
+    /* Rectangle 11 */
+
+
+position: absolute;
+width: 15px;
+height: 16px;
+left: 34px;
+top: 737px;
+
+background: #FFFFFF;
+}
