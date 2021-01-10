@@ -40,8 +40,8 @@ color: #EBEEFF;
 position: absolute;
 width: 533px;
 height: 0px;
-left: 43px;
-top: 179px;
+left: -190px ;
+top: 350px;
 
 border: 1px solid #FFFFFF;
 transform: rotate(90.23deg);
@@ -52,11 +52,92 @@ transform: rotate(90.23deg);
     /* Rectangle 11 */
 
 
-position: absolute;
+position: relative;
 width: 15px;
 height: 16px;
-left: 34px;
+left: 58px;
 top: 737px;
 
 background: #FFFFFF;
+}
+
+/* contact us main form design */
+
+/* firstname */
+.contact-form-firstname {
+    
+position: absolute;
+width: 315px;
+height: 76px;
+left: 720px;
+top: 123px;
+
+background: #FFFFFF;
+border: 5px solid #ADB9FF;
+box-sizing: border-box;
+border-radius: 20px;
+}
+
+
+.contact-form-lastname {
+    
+position: absolute;
+width: 326px;
+height: 76px;
+left: 1055px;
+top: 121px;
+
+background: #FFFFFF;
+border: 5px solid #ADB9FF;
+box-sizing: border-box;
+border-radius: 20px;
+
+}
+
+
+.contact-form-email {
+
+    /* Rectangle 9 */
+
+
+position: absolute;
+width: 659px;
+height: 76px;
+left: 720px;
+top: 266px;
+
+background: #FFFFFF;
+border: 5px solid #ADB9FF;
+box-sizing: border-box;
+border-radius: 20px;
+
+}
+
+
+.contact-form-message{
+
+    /* Rectangle 10 */
+
+
+position: absolute;
+width: 659px;
+height: 258px;
+left: 720px;
+top: 411px;
+
+background: #FFFFFF;
+border: 5px solid #ADB9FF;
+box-sizing: border-box;
+border-radius: 20px;
+
+}
+
+.contac-form-send{
+    
+position: absolute;
+width: 431px;
+height: 55px;
+left: 839px;
+top: 745px;
+
 }

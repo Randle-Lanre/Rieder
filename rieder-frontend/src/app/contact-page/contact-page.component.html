@@ -4,6 +4,58 @@
     <div class="container contact-page-left ">
 
 
+ <div class="contact-page-left-text"> Speak with us </div>
+ <div class="contact-page-left-design-line"></div>
+ <div class="contact-page-left-design-line-dot"></div>
+ <br>
+ <div class="contact-page-left-design-line-dot"></div>
+ <br>
+ <div class="contact-page-left-design-line-dot"></div>
+ <br>
 
+ 
+ <div class="container">
+    <div >
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="container " id="form-group-position">
+            <!-- <h3 class="">contact form </h3> -->
+            <div class="form-group ">
+                <!-- <label >username:</label> -->
+                <br>
+                <input class="contact-form-firstname" type="text" formControlName="firstname" placeholder=" First name" required>
+            </div>
+
+            <div class="form-group ">
+                
+                <br>
+                <input class="contact-form-lastname" type="text" formControlName="LastName" placeholder=" Last name" required>
+            </div>
+
+
+            <div class="form-group ">
+                
+                <br>
+                <input class="contact-form-email" type="email" formControlName="email" placeholder=" Email" required>
+            </div>
+
+            <div class="form-group ">
+                
+                <br>
+                <input class="contact-form-message" type="text" formControlName="Message" placeholder=" Message" required>
+            </div>
+
+
+           
+    
+            <!-- <button class="btn btn-primary btn-lg contact-form-send" type="submit" [disabled]="!contactForm.valid">Send</button> -->
+
+           
+    
+        </form>
+       
+    </div>
+    
+</div>
+ 
     </div>
 </div>
