@@ -1,0 +1,67 @@
+
+
+.account-profile-pic {
+    /* bi:person-circle */
+
+
+position: absolute;
+width: 215px;
+height: 212px;
+left: 116px;
+top: 45px;
+
+
+}
+
+
+
+.wallet-icon{
+
+    /* entypo:wallet */
+
+
+position: absolute;
+width: 82px;
+height: 63px;
+left: 21px;
+top: 484px;
+
+
+}
+
+
+.bikes-rented{
+    
+position: absolute;
+width: 162px;
+height: 145px;
+left: 647px;
+top: 125px;
+
+
+
+}
+
+
+.bikes-owned{
+
+
+    position: absolute;
+    width: 198px;
+    height: 172px;
+    left: 629px;
+    top: 496px;
+    
+}
+
+
+.bottom-design{
+    position: absolute;
+width: 1440px;
+height: 411.22px;
+left: 0px;
+top: 612.78px;
+
+background: #ADB9FF;
+
+}
