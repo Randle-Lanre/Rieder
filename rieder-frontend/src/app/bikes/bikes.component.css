@@ -1,0 +1,23 @@
+.price{
+    color: #6887F4;
+
+}
+
+.addtocart{
+    color: white;
+    background-color: #6887F4;
+    
+    border-color:#6887F4 ;
+    border-radius: 10px;
+    transform: scale(1);
+    
+}
+
+.addtocart:hover{
+   
+    background-color: #ADB9FF;
+    border-color:#ADB9FF ;
+    transform: scale(1.2) perspective(1px);
+
+}
+
