@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { BikesComponent } from './bikes/bikes.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { BikesComponent } from './bikes/bikes.component';
     LoginComponent,
     RegistrationComponent,
     UserAccountComponent,
-    BikesComponent
+    BikesComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

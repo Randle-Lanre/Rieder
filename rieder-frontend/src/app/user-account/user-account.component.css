@@ -65,3 +65,64 @@ top: 612.78px;
 background: #ADB9FF;
 
 }
+
+
+
+/*  new css for account format */
+
+
+
+
+
+
+.side-bar-menu{
+    height: max-content;
+    /* background-color: inherit; */
+    
+    margin-top: 5rem;
+    border-style: solid !important;
+    
+   max-width: 12rem;
+   border-radius: 0% 10% 10% 0%;
+   border-color:#6887F4 ;
+   background-color:#6887F4;
+   
+    
+   
+
+
+}
+
+
+
+
+li{
+    list-style-type: none;
+    font-family: 'Lobster' ;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 50px;
+max-width: 10rem;
+
+
+
+    
+}
+
+a{
+    color: whitesmoke;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: underline;
+}
